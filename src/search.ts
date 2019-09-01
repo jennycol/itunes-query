@@ -62,7 +62,7 @@ async function getData(search: ItunesSearch): Promise<ItunesResult[]> {
 
     let json = await res.json();
 
-    return <ItunesResult[]>json.results;
+    return json.results as ItunesResult[];
 }
 
 export async function search(term: string, media: ItunesMedia, options?: ItunesSearch): Promise<ItunesResult[]> {
